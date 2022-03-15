@@ -32,8 +32,7 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 	
-	public User() {
-	}
+	public User() {}
 
 	public User(Long id, String name, String email, String phone, String password) {
 		this.id = id;
@@ -43,54 +42,25 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public Long getId() {
-		return id;
-	}
+	public Long getId() { return id; }
+	public void setId(Long id) { this.id = id; }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
 
-	public String getName() {
-		return name;
-	}
+	public String getEmail() { return email; }
+	public void setEmail(String email) { this.email = email; }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	public String getPhone() { return phone; }
+	public void setPhone(String phone) { this.phone = phone; }
 
-	public String getEmail() {
-		return email;
-	}
+	public String getPassword() { return password; }
+	public void setPassword(String password) { this.password = password; }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	public List<Order> getOrders() {
-		return orders;
-	}
+	public List<Order> getOrders() { return orders; }
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
+	public int hashCode() { return Objects.hash(id); }
 
 	@Override
 	public boolean equals(Object obj) {
@@ -103,5 +73,4 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
-
 }
